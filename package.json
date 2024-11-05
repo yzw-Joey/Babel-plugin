@@ -1,0 +1,16 @@
+{
+  "name": "babel-plugin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-react": "^7.25.9"
+  }
+}
