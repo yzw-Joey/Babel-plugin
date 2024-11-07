@@ -1,4 +1,7 @@
-const { transformSync } = require('@babel/core');
+const { transformFromAstSync, transformFileSync } = require('@babel/core');
+const parser = require('@babel/parser');
+const autoI18nPlugin = require('./plugin/auto-intl-plugin');
+const autoI18nPlugin2 = require('./plugin/my-auto-intl-plugin');
 const fs = require('fs');
 const path = require('path');
 
@@ -6,8 +9,20 @@ const sourceCode = fs
   .readFileSync(path.resolve(__dirname, 'source.js'))
   .toString('utf-8');
 
-const result = transformSync(sourceCode, {
-  presets: [['@babel/preset-react', { runtime: 'automatic' }]],
+const ast = parser.parse(sourceCode, {
+  sourceType: 'unambiguous',
+  plugins: ['jsx'],
 });
 
-console.log(result);
+const { code } = transformFromAstSync(ast, sourceCode, {
+  plugins: [
+    [
+      autoI18nPlugin2,
+      {
+        outputDir: path.resolve(__dirname, 'output'),
+      },
+    ],
+  ],
+});
+
+console.log(code);

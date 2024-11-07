@@ -11,6 +11,10 @@
   "license": "ISC",
   "dependencies": {
     "@babel/core": "^7.26.0",
-    "@babel/preset-react": "^7.25.9"
+    "@babel/generator": "^7.26.2",
+    "@babel/helper-plugin-utils": "^7.25.9",
+    "@babel/parser": "^7.26.2",
+    "@babel/preset-react": "^7.25.9",
+    "fs-extra": "^11.2.0"
   }
 }
