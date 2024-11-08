@@ -1,0 +1,170 @@
+{
+    "root": {
+        "path": "/Users/yangzhiwen/Desktop/Babel-plugin/src/plugin/tranverse-modules/test-proj/index.js",
+        "imports": {
+            "/Users/yangzhiwen/Desktop/Babel-plugin/src/plugin/tranverse-modules/test-proj/a.js": [
+                {
+                    "type": "deconstruct",
+                    "imported": "aa1",
+                    "local": "aa1"
+                },
+                {
+                    "type": "deconstruct",
+                    "imported": "aa2",
+                    "local": "aa2"
+                }
+            ]
+        },
+        "exports": [],
+        "subModules": {
+            "/Users/yangzhiwen/Desktop/Babel-plugin/src/plugin/tranverse-modules/test-proj/a.js": {
+                "path": "/Users/yangzhiwen/Desktop/Babel-plugin/src/plugin/tranverse-modules/test-proj/a.js",
+                "imports": {
+                    "/Users/yangzhiwen/Desktop/Babel-plugin/src/plugin/tranverse-modules/test-proj/b.js": [
+                        {
+                            "type": "default",
+                            "local": "b"
+                        }
+                    ]
+                },
+                "exports": [],
+                "subModules": {
+                    "/Users/yangzhiwen/Desktop/Babel-plugin/src/plugin/tranverse-modules/test-proj/b.js": {
+                        "path": "/Users/yangzhiwen/Desktop/Babel-plugin/src/plugin/tranverse-modules/test-proj/b.js",
+                        "imports": {
+                            "/Users/yangzhiwen/Desktop/Babel-plugin/src/plugin/tranverse-modules/test-proj/c/index.js": [
+                                {
+                                    "type": "deconstruct",
+                                    "imported": "cc",
+                                    "local": "renamedCc"
+                                }
+                            ]
+                        },
+                        "exports": [],
+                        "subModules": {
+                            "/Users/yangzhiwen/Desktop/Babel-plugin/src/plugin/tranverse-modules/test-proj/c/index.js": {
+                                "path": "/Users/yangzhiwen/Desktop/Babel-plugin/src/plugin/tranverse-modules/test-proj/c/index.js",
+                                "imports": {},
+                                "exports": [],
+                                "subModules": {}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "allModules": {
+        "import { cc as renamedCc } from './c';": {
+            "path": "/Users/yangzhiwen/Desktop/Babel-plugin/src/plugin/tranverse-modules/test-proj/b.js",
+            "imports": {
+                "/Users/yangzhiwen/Desktop/Babel-plugin/src/plugin/tranverse-modules/test-proj/c/index.js": [
+                    {
+                        "type": "deconstruct",
+                        "imported": "cc",
+                        "local": "renamedCc"
+                    }
+                ]
+            },
+            "exports": [],
+            "subModules": {
+                "/Users/yangzhiwen/Desktop/Babel-plugin/src/plugin/tranverse-modules/test-proj/c/index.js": {
+                    "path": "/Users/yangzhiwen/Desktop/Babel-plugin/src/plugin/tranverse-modules/test-proj/c/index.js",
+                    "imports": {},
+                    "exports": [],
+                    "subModules": {}
+                }
+            }
+        },
+        "import b from './b';": {
+            "path": "/Users/yangzhiwen/Desktop/Babel-plugin/src/plugin/tranverse-modules/test-proj/a.js",
+            "imports": {
+                "/Users/yangzhiwen/Desktop/Babel-plugin/src/plugin/tranverse-modules/test-proj/b.js": [
+                    {
+                        "type": "default",
+                        "local": "b"
+                    }
+                ]
+            },
+            "exports": [],
+            "subModules": {
+                "/Users/yangzhiwen/Desktop/Babel-plugin/src/plugin/tranverse-modules/test-proj/b.js": {
+                    "path": "/Users/yangzhiwen/Desktop/Babel-plugin/src/plugin/tranverse-modules/test-proj/b.js",
+                    "imports": {
+                        "/Users/yangzhiwen/Desktop/Babel-plugin/src/plugin/tranverse-modules/test-proj/c/index.js": [
+                            {
+                                "type": "deconstruct",
+                                "imported": "cc",
+                                "local": "renamedCc"
+                            }
+                        ]
+                    },
+                    "exports": [],
+                    "subModules": {
+                        "/Users/yangzhiwen/Desktop/Babel-plugin/src/plugin/tranverse-modules/test-proj/c/index.js": {
+                            "path": "/Users/yangzhiwen/Desktop/Babel-plugin/src/plugin/tranverse-modules/test-proj/c/index.js",
+                            "imports": {},
+                            "exports": [],
+                            "subModules": {}
+                        }
+                    }
+                }
+            }
+        },
+        "import { aa1, aa2 } from './a';": {
+            "path": "/Users/yangzhiwen/Desktop/Babel-plugin/src/plugin/tranverse-modules/test-proj/index.js",
+            "imports": {
+                "/Users/yangzhiwen/Desktop/Babel-plugin/src/plugin/tranverse-modules/test-proj/a.js": [
+                    {
+                        "type": "deconstruct",
+                        "imported": "aa1",
+                        "local": "aa1"
+                    },
+                    {
+                        "type": "deconstruct",
+                        "imported": "aa2",
+                        "local": "aa2"
+                    }
+                ]
+            },
+            "exports": [],
+            "subModules": {
+                "/Users/yangzhiwen/Desktop/Babel-plugin/src/plugin/tranverse-modules/test-proj/a.js": {
+                    "path": "/Users/yangzhiwen/Desktop/Babel-plugin/src/plugin/tranverse-modules/test-proj/a.js",
+                    "imports": {
+                        "/Users/yangzhiwen/Desktop/Babel-plugin/src/plugin/tranverse-modules/test-proj/b.js": [
+                            {
+                                "type": "default",
+                                "local": "b"
+                            }
+                        ]
+                    },
+                    "exports": [],
+                    "subModules": {
+                        "/Users/yangzhiwen/Desktop/Babel-plugin/src/plugin/tranverse-modules/test-proj/b.js": {
+                            "path": "/Users/yangzhiwen/Desktop/Babel-plugin/src/plugin/tranverse-modules/test-proj/b.js",
+                            "imports": {
+                                "/Users/yangzhiwen/Desktop/Babel-plugin/src/plugin/tranverse-modules/test-proj/c/index.js": [
+                                    {
+                                        "type": "deconstruct",
+                                        "imported": "cc",
+                                        "local": "renamedCc"
+                                    }
+                                ]
+                            },
+                            "exports": [],
+                            "subModules": {
+                                "/Users/yangzhiwen/Desktop/Babel-plugin/src/plugin/tranverse-modules/test-proj/c/index.js": {
+                                    "path": "/Users/yangzhiwen/Desktop/Babel-plugin/src/plugin/tranverse-modules/test-proj/c/index.js",
+                                    "imports": {},
+                                    "exports": [],
+                                    "subModules": {}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
